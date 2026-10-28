@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 
     char buf[100000];
     long n = syscall(SYS_read, fd, buf, 100000);
+    if(n<0) printf("hahaahh");
     syscall(SYS_write, 1, buf, n);
     syscall(SYS_close, fd);
     return 0;
